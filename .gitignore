@@ -1,0 +1,9 @@
+.idea/
+__pycache__
+*.log
+*.txt
+*.png
+**/.ipynb_checkpoints
+/demo/e4d_demo/*
+*.zip
+/third_party/cloudcompy/*
