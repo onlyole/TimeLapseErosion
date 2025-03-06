@@ -7,3 +7,4 @@ __pycache__
 /demo/e4d_demo/*
 *.zip
 /third_party/cloudcompy/*
+!req/pip/*.txt

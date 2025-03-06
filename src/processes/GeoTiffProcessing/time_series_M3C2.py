@@ -121,7 +121,7 @@ if __name__ == '__main__':
 
     '''set parameters'''
 
-    directory_m3c2 = r'D:\Grothum\Kamerstation_Metashape\Station_unten\m3c2'
+    directory_m3c2 = r'D:\Grothum\Kamerstation_Metashape\Station_oben\m3c2'
     crop_dir = os.path.join(directory_m3c2, 'crop')
     directory_output = os.path.join(directory_m3c2, 'timeseries')
     if not os.path.exists(directory_output):
