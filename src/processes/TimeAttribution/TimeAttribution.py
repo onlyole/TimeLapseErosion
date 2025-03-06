@@ -23,6 +23,9 @@ station_cams = {'Station_oben': ["Kamera21", "Kamera22", "Kamera23", "Kamera24",
 
 cams = station_cams[station]
 
+# temporal window, where daily images are taken. images outside will be ignored.
+time_window_start = '09:30'
+time_window_end = '11:00'
 
 def process_camera_images(root_path, camera, months):
     """
@@ -144,9 +147,9 @@ for idx, sub in enumerate(sub_frames):
 
         # locate pictures taken between 9:00 and 11:00 a.m.
         sub_index = pd.DatetimeIndex(sub_group['datetime'])
-        sub_group = sub_group.iloc[sub_index.indexer_between_time('9:30', '11:00')]
+        sub_group = sub_group.iloc[sub_index.indexer_between_time(time_window_start, time_window_end)]
         ref_index = pd.DatetimeIndex(ref_group['datetime'])
-        ref_group = ref_group.iloc[ref_index.indexer_between_time('9:30', '11:00')]
+        ref_group = ref_group.iloc[ref_index.indexer_between_time(time_window_start, time_window_end)]
 
         if sub_group.shape[0] < 1:
             continue
